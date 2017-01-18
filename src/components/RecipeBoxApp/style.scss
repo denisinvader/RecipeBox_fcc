@@ -1,0 +1,43 @@
+$white: #fff;
+
+.recipe-box-app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+
+  &__list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: darken($white, 5%);
+    overflow-y: auto;
+    z-index: 0;
+  }
+  &__detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity .15s, right .1s, width .1s;
+    z-index: 1;
+
+    &_hidden {
+      width: 0;
+      overflow: hidden;
+      right: 100%;
+      opacity: 0;
+      transition: opacity .15s, right .1s, width .2s linear .15s;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

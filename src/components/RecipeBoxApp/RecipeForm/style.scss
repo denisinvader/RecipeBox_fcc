@@ -1,0 +1,77 @@
+$white: #fff;
+$black: #000;
+$gray: #ccc;
+$dark-gray: #555;
+$teal: #009688;
+$red: #F44336;
+$indigo: #3F51B5;
+
+.recipe-form {
+  box-sizing: border-box;
+  padding: 8px 16px;
+
+  &__header {
+    font-size: 2em;
+    margin-bottom: 16px;
+  }
+  &__footer {
+    margin: 16px 0;
+  }
+  &__add-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    font-size: .9em;
+    color: $indigo;
+
+    &:hover,
+    &:focus {
+      color: lighten($indigo, 5%);
+    }
+  }
+}
+
+.input-block {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 12px 0 16px;
+
+  &__label {
+    position: absolute;
+    top: 0;
+    color: $dark-gray;
+    font-size: 14px;
+    transition: color .2s;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border: none;
+    border-bottom: 1px solid $gray;
+    font-size: 1.1em;
+    transition: all .2s;
+
+    &::placeholder {
+      color: lighten($gray, 2%);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $teal;
+      box-shadow: 0 1px 0 $teal
+    }
+
+    &:focus ~ .input-block__label {
+      color: darken($teal, 10%);
+    }
+  }
+}
+
+.hidden-input {
+  display: none;
+}
